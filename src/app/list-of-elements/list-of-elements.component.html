@@ -2,10 +2,7 @@
     <table class="table table-hover table-borderless">
         <thead class="list-header">
             <tr>
-                <th class="small-border" scope="col">Code</th>
-                <th class="small-border" scope="col">Nom du client</th>
-                <th class="small-border" scope="col">Agence</th>
-                <th class="small-border" scope="col">Actions</th>
+                <th class="small-border" scope="col" *ngFor="let header of headers">{{ header }}</th>
             </tr>
         </thead>
         <tbody>

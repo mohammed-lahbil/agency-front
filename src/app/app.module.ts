@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { BankDetailComponent } from './bank-detail/bank-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ListOfElementsComponent } from './list-of-elements/list-of-elements.component';
+import { AddInterfaceComponent } from './add-interface/add-interface.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ListOfElementsComponent } from './list-of-elements/list-of-elements.com
     LoginComponent,
     BankDetailComponent,
     HomeComponent,
-    ListOfElementsComponent
+    ListOfElementsComponent,
+    AddInterfaceComponent
   ],
   imports: [
     BrowserModule,

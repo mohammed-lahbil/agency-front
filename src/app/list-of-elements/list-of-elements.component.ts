@@ -19,7 +19,7 @@ export class ListOfElementsComponent implements OnInit {
 
   constructor() { 
 
-    this.headers = ["Code", "Nom du client", "Agence", "Action"];
+    this.headers = ["Code", "Nom du client", "Agence", "Actions"];
     
     this.clients = [
       {
