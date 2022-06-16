@@ -28,10 +28,6 @@ button{
     float: right;
 }
 
-.right{
-    position: relative;
-}
-
 button:hover{
     background: #0175AE;
     color: white;
