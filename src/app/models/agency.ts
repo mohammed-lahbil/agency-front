@@ -1,6 +1,6 @@
-export class Agency{
-  string: code;
-  string: name;
-  string: address;
-  boolean: status;
+export interface Agency{
+  code: number;
+  name: string;
+  address: string;
+  status: boolean;
 }

@@ -40,3 +40,6 @@ button:hover{
     background: #1992CD;
 }
 
+button:active{
+    background: #1992CD;
+}

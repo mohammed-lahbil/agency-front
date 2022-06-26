@@ -1,3 +1,4 @@
+<app-add-button></app-add-button>
 <div class="list-of-elements container">
     <table class="table table-hover table-borderless">
         <thead class="list-header">
@@ -6,17 +7,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let client of clients; let index = index">
-                <td class="small-border">{{client.code}}</td>
-                <td class="small-border">{{client.name}}</td>
-                <td class="small-border">{{client.agency}}</td>
+            <tr *ngFor="let client of clients">
+                <td class="small-border">{{ client.clientId }}</td>
+                <td class="small-border">{{ client.name }}</td>
+                <td class="small-border">{{ client.agency.name }}</td>
                 <td class="small-border">
                     <button type="button" class="btn btn-outline-primary"><i class="bi bi-file-earmark-plus"></i></button>
-                    
                     <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                    
-                    <button type="button" class="btn btn-outline-primary" (click)="delete(index)"><i class="bi bi-trash3"></i></button>
-
+                    <button type="button" class="btn btn-outline-primary" (click)="deleteClient(client)"><i class="bi bi-trash3"></i></button>
                     <button type="button" class="btn btn-outline-primary"><i class="bi bi-list-ul"></i></button>
                 </td>
             </tr>
