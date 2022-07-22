@@ -19,7 +19,7 @@ label{
     font-size: 16px;
 }
 
-button{
+.btn.btn-primary{
     font-weight: bold;
     background: white;
     color: #0175AE;
@@ -28,8 +28,13 @@ button{
     float: right;
 }
 
-button:hover{
+.btn.btn-primary:hover{
     background: #0175AE;
     color: white;
     border: solid 1px white;
+}
+
+.btn-close:focus, .btn:focus {    
+    outline: none;
+    box-shadow: none;
 }

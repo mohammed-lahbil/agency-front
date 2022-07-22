@@ -1,7 +1,4 @@
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-// import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddButtonComponent } from '../add-button/add-button.component';
 import { Agency } from '../models/agency';
 import { Client } from '../models/client';
@@ -14,9 +11,8 @@ import { ClientService } from '../service/client/client.service';
   styleUrls: ['./add-interface.component.css']
 })
 
-@Inject([])
-
 export class AddInterfaceComponent implements OnInit {
+  alert : boolean = false;
   client : Client = {
     clientId: 0,
     name:'',
@@ -31,7 +27,7 @@ export class AddInterfaceComponent implements OnInit {
   clients: Client[] = [];
   agencies: Agency[] = [];
 
-  constructor(private clientService: ClientService,private addButton:AddButtonComponent, private agencyService: AgencyService){}
+  constructor(private clientService: ClientService, private addButton:AddButtonComponent, private agencyService: AgencyService){}
 
   ngOnInit(): void {
     this.findAllAgencies();
@@ -57,13 +53,20 @@ export class AddInterfaceComponent implements OnInit {
   addClient(){
     this.clientService.add(this.client).subscribe(
       (response : Client) => {
-        console.log("hbiba", response);
-        this.client.clientId = response.clientId;
-        this.client.name = response.name;
-        this.client.agency = response.agency;
-        this.clients = [this.client, ...this.clients];
+        this.clients = [response, ...this.clients];
+        this.findAllClients();
+        this.addButton.closeDialog();
+        window.alert(response.name+" a été ajouté avec succès !");
       }
     );
-    console.log("kbida", this.client);
+  }
+
+  editClient(client: Client){
+    this.clientService.update(this.client).subscribe(
+      (response: Client|any) => {
+        this.client.agency = response.agency;
+        this.client.name = response.name;
+      }
+    )
   }
 }

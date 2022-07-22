@@ -12,6 +12,7 @@ export class ClientService {
 
   baseUrl: string = 'http://localhost:8080/clients';
 
+
   findAll(): Observable<Client[]>{
     return this.http.post<Client[]>(this.baseUrl + "/all", {});
   }
@@ -20,8 +21,9 @@ export class ClientService {
     return this.http.post(this.baseUrl + "/delete", client);
   }
 
-  add(client: Client){
+  add(client: Client): Observable<Client>{
     return this.http.post<Client>(this.baseUrl + "/create", client);
+    
   }
 
   update(client: Client){
@@ -31,4 +33,5 @@ export class ClientService {
   getClient(id: string){
     return this.http.post(this.baseUrl+'/get', id);
   }
+
 }

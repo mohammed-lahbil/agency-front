@@ -34,4 +34,8 @@ export class AgencyService {
   getAgency(id: number): Observable<Agency>{
     return this.http.post<Agency>(this.baseUrl+'/findByCode', id);
   }
+
+  getAgencyByName(name: string): Observable<Agency>{
+    return this.http.post<Agency>(this.baseUrl + '/findByName', name);
+  }
 }

@@ -1,0 +1,37 @@
+.navbar{
+    background: #0175AE;
+}
+
+.container-fluid{
+    width: 90%;
+}
+
+.img-fluid{
+    height: 50px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+i{
+    font-size: 28px;
+}
+
+.nav-link{
+    color: #F2F2F2;
+    font-weight: 650;
+}
+
+.dropdown-item{
+    color: #F2F2F2;
+}
+
+.dropdown-menu{
+    background-color: #0175AE;
+}
+
+.dropdown-item:hover{
+    background: #F2F2F2;
+    color: #0175AE;
+}
